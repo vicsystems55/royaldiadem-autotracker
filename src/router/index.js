@@ -1,14 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../components/Home.vue'; // Create these components
-import About from '../components/About.vue';
+import HomeView from '../views/pages/HomeView.vue';
+import AboutView from '../views/pages/AboutView.vue';
+import BlogView from '../views/pages/BlogView.vue';
+import ContactView from '../views/pages/ContactView.vue';
 
 const routes = [
-    { path: '/', component: Home, meta: { layout: 'MainLayout', pageTitle: 'Home' } },
-    { path: '/about', component: About, meta: { layout: 'MainLayout', pageTitle: 'About Us' } },
-    { path: '/blog', component: BlogPage, meta: { layout: 'MainLayout', pageTitle: 'Blog' } },
-    { path: '/contact', component: ContactPage, meta: { layout: 'MainLayout', pageTitle: 'Contact' } },
-    { path: '/training', component: TrainingPage, meta: { layout: 'MainLayout', pageTitle: 'Training Programs' } },
-    { path: '/clinic', component: ClinicPage, meta: { layout: 'MainLayout', pageTitle: 'Clinic' } },
+    { path: '/', component: HomeView, meta: { layout: 'MainLayout', pageTitle: 'Home' } },
+    { path: '/about', component: AboutView, meta: { layout: 'MainLayout', pageTitle: 'About Us' } },
+    { path: '/blog', component: BlogView, meta: { layout: 'MainLayout', pageTitle: 'Blog' } },
+    { path: '/contact', component: ContactView, meta: { layout: 'MainLayout', pageTitle: 'Contact' } },
+
   ];
   
   
