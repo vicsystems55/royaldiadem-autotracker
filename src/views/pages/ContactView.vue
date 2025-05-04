@@ -50,11 +50,7 @@
         </div>
       </section>
   
-      <!-- Footer -->
-      <footer class="bg-gray-900 text-white py-6 text-center text-sm">
-        Copyright © 2025 Royal Diadem Auto Tracker |
-        Powered by vicSystems
-      </footer>
+   
     </div>
   </template>
   

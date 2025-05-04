@@ -1,12 +1,12 @@
 <template>
     <main>
       <!-- Hero Section -->
-      <section class="hero bg-gray-100 text-center py-20">
+      <section class="hero bg-gray-100 text-center py-20 min-h-[700px]">
         <div class="container mx-auto px-4">
           <div class="bg-gray-700 text-white p-8 rounded-md max-w-2xl mx-auto">
             <h1 class="text-3xl font-bold mb-4">Reliable Vehicle Security</h1>
             <p class="mb-6">
-              Having advanced GPS tracker protects your vehicle from theft and unauthorized access. 
+              Having advanced GPS tracker protects your vehicle from theft and unauthorized access.
               Make the smart choice & experience peace of mind.
             </p>
             <button class="bg-purple-600 px-6 py-2 rounded text-white hover:bg-purple-700">
@@ -22,8 +22,8 @@
           <h2 class="text-2xl font-bold text-center mb-12">What we offer</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div v-for="(feature, index) in features" :key="index" class="p-4">
-              <div class="text-purple-600 text-3xl mb-2">
-                <i :class="feature.icon"></i>
+              <div class="text-purple-600 text-4xl mb-4">
+                <font-awesome-icon :icon="feature.icon" />
               </div>
               <h3 class="font-semibold text-lg">{{ feature.title }}</h3>
               <p class="text-sm text-gray-600">{{ feature.description }}</p>
@@ -37,11 +37,19 @@
         <div class="container mx-auto px-4">
           <h2 class="text-2xl font-bold text-center mb-12">Our Pricing</h2>
           <div class="grid gap-6 md:grid-cols-3">
-            <div v-for="(plan, index) in pricingPlans" :key="index" class="bg-white shadow p-6 rounded-lg text-center">
+            <div
+              v-for="(plan, index) in pricingPlans"
+              :key="index"
+              class="bg-white shadow p-6 rounded-lg text-center"
+            >
               <h3 class="text-xl font-semibold mb-2">{{ plan.name }}</h3>
               <p class="text-2xl font-bold text-green-600 mb-4">{{ plan.price }}</p>
               <ul class="text-left text-sm mb-6">
-                <li v-for="(item, i) in plan.features" :key="i" class="mb-1 flex items-start">
+                <li
+                  v-for="(item, i) in plan.features"
+                  :key="i"
+                  class="mb-1 flex items-start"
+                >
                   <span class="text-green-500 mr-2">✔️</span> {{ item }}
                 </li>
               </ul>
@@ -75,7 +83,11 @@
             Royal Diadem Auto Tracker & Recovery Solution
           </h2>
           <div class="flex justify-center mb-6">
-            <img src="../../assets/tracker-showcase.png" alt="Auto Tracker Demo" class="rounded shadow-md" />
+            <img
+              src="../../assets/tracker_showcase.png"
+              alt="Auto Tracker Demo"
+              class="rounded shadow-md"
+            />
           </div>
           <p class="text-sm text-gray-700 max-w-xl mx-auto">
             Having advanced GPS tracker protects your vehicle from theft and unauthorized access.
@@ -111,34 +123,36 @@
   </template>
   
   <script setup>
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+  
   const features = [
     {
-      icon: 'fas fa-map-marker-alt',
+      icon: ['fas', 'map-marker-alt'],
       title: 'Tracking Unit',
       description: 'A tracking unit well hidden in your vehicle helps us track the car in real time and recover it.'
     },
     {
-      icon: 'fas fa-headphones',
+      icon: ['fas', 'headphones'],
       title: 'Listen to Conversation',
       description: 'Secretly listen to live conversations going on in your car.'
     },
     {
-      icon: 'fas fa-car-crash',
+      icon: ['fas', 'car-crash'],
       title: 'Vehicle Engine Control',
       description: 'Remotely turn off your vehicle engine in the event of a theft.'
     },
     {
-      icon: 'fas fa-tools',
+      icon: ['fas', 'tools'],
       title: 'Easy Recovery',
       description: 'Our tools help locate and recover stolen vehicles efficiently.'
     },
     {
-      icon: 'fas fa-bullseye',
+      icon: ['fas', 'bullseye'],
       title: 'Geo Fencing & Ignition Alert',
       description: 'Receive alerts when your vehicle enters or exits defined zones.'
     },
     {
-      icon: 'fas fa-shield-alt',
+      icon: ['fas', 'shield-alt'],
       title: 'Well Equipped Control Centre',
       description: '24/7 support centre that tracks and handles all reports quickly.'
     }
@@ -176,24 +190,24 @@
     {
       name: 'Elizabeth A. Njide',
       role: 'President/Founder',
-      photo: '/images/team/elizabeth.jpg'
+      photo: '/src/assets/elizabeth.jpg'
     },
     {
       name: 'Ilesanmi Oluwaseun A.',
       role: 'Operations Manager',
-      photo: '/images/team/ilesanmi.jpg'
+      photo: '/src/assets/ilesanmi.jpg'
     },
     {
       name: 'Adetunji Felix D.',
       role: 'Business Development Manager',
-      photo: '/images/team/felix.jpg'
+      photo: '/src/assets/adelana.jpg'
     }
   ]
   </script>
   
   <style scoped>
   .hero {
-    background-image: url('@/assets/banner-bg.jpg');
+    background-image: url('/src/assets/tracker_showcase.png');
     background-size: cover;
     background-position: center;
   }
